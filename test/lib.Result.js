@@ -188,7 +188,7 @@ describe('Lib', function () {
           params.should.equal(_params);
           rs.should.equal(resultSet);
           done();
-        }, _params, [resultSet]);
+        }, null, _params, [resultSet]);
       });
 
     it('should handle a db procedure call with lob instance',
@@ -215,7 +215,7 @@ describe('Lib', function () {
             params.Z.should.equal(_buffer);
             rows.should.eql(_rows);
             done();
-          }, _params, [resultSet]);
+          }, null, _params, [resultSet]);
       });
 
     it('should handle a db procedure call with lob buffer',
@@ -242,7 +242,7 @@ describe('Lib', function () {
             params.Z.should.equal(_buffer);
             rows.should.eql(_rows);
             done();
-          }, _params, [resultSet]);
+          }, null, _params, [resultSet]);
       });
 
 
@@ -268,7 +268,7 @@ describe('Lib', function () {
           function (err) {
             err.should.equal(_err);
             done();
-          }, _params, [resultSet]);
+          }, null, _params, [resultSet]);
       });
 
     it('should handle a db procedure call with error',
@@ -281,7 +281,7 @@ describe('Lib', function () {
         result.handleDBCall(function (err) {
           err.should.equal(_err);
           done();
-        }, {}, [resultSet]);
+        }, null, {}, [resultSet]);
       });
 
 
@@ -295,7 +295,7 @@ describe('Lib', function () {
         result.handleQuery(function (err) {
           err.should.equal(_err);
           done();
-        }, [resultSet]);
+        }, null, [resultSet]);
       });
   });
 });
